@@ -6,6 +6,8 @@ myurlvar = uReq(my_url)
 page_html = myurlvar.read()
 myurlvar.close()
 page_soup = soup(page_html, "html.parser")
+a = page_soup.title.text
+print(a)
 #grab div class which consist of post summary
 #myclass = page_soup.findAll("div",{"class": "post-summary"}
 myclass = page_soup.find('div', class_='post-summary').p.text
